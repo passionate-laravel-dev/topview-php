@@ -1,0 +1,41 @@
+{
+    "name": "passionate-laravel-dev/topview-php",
+    "description": "PHP package for topview",
+    "keywords": [
+        "ai",
+        "php",
+        "topview",
+        "ai-video",
+        "topview-php",
+        "passionate-laravel-dev"
+    ],
+    "homepage": "https://github.com/passionate-laravel-dev/topview-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Taha",
+            "email": "taha.engineer26@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2.4",
+        "illuminate/http": "^10.0 || ^11.0 || ^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Passionatelaraveldev\\Topview\\": "src/"
+        }
+    },
+    "scripts": {
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "laravel/pint": "^1.22"
+    }
+}
