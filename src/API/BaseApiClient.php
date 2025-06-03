@@ -31,7 +31,7 @@ class BaseApiClient
      */
     public function getFullUrl(string $url): string
     {
-        return rtrim($this->apiBaseUrl, '/') . '/' . ltrim($url, '/');
+        return rtrim($this->apiBaseUrl, '/').'/'.ltrim($url, '/');
     }
 
     /**
@@ -45,9 +45,11 @@ class BaseApiClient
     /**
      * file upload to s3
      */
-    public function fileUploadToS3(string $filePath,string $uploadUrl): Response {
+    public function fileUploadToS3(string $filePath, string $uploadUrl): Response
+    {
         $mimeType = mime_content_type($filePath);
         $headers = ['Content-Type' => $mimeType];
+
         return Http::withToken($this->authToken())->withHeaders($this->getHeaders($headers))->put($uploadUrl, file_get_contents($filePath));
     }
 

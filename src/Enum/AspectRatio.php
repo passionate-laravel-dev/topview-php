@@ -15,7 +15,6 @@ enum AspectRatio: string
     case RATIO_16_9 = '16:9';
     case ALL = 'all';
 
-
     public function label(): string
     {
         return match ($this) {

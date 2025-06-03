@@ -20,12 +20,13 @@ trait HasAuth
     public function authHeader(): array
     {
         return [
-            'Topview-Uid' => $this->TOPVIEW_UID
+            'Topview-Uid' => $this->TOPVIEW_UID,
         ];
     }
 
     /**return topview api key to use on auth header */
-    public function authToken(): string {
+    public function authToken(): string
+    {
         return $this->TOPVIEW_API_KEY;
     }
 

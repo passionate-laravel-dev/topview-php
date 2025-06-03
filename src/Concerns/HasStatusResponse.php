@@ -17,25 +17,25 @@ trait HasStatusResponse
         if ($res->successful()) {
             return FacadesResponse::json([
                 'status' => 'success',
-                'resData' => $res->json()
+                'resData' => $res->json(),
             ]);
         }
 
         if ($res->unauthorized()) {
             return FacadesResponse::json([
                 'status' => 'error',
-                'message' => $res->json('error') ?? 'Unauthorized'
+                'message' => $res->json('error') ?? 'Unauthorized',
             ], 401);
         }
 
         Log::error('Topview API error response', [
             'status' => $res->status(),
-            'body' => $res->body()
+            'body' => $res->body(),
         ]);
 
         return FacadesResponse::json([
             'status' => 'error',
-            'message' => $res->json('error') ?? 'Unexpected error happen'
+            'message' => $res->json('error') ?? 'Unexpected error happen',
         ], $res->status());
     }
 }
