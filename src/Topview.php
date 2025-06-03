@@ -25,42 +25,48 @@ class Topview
     /**
      * avatar marketing video
      */
-    public function avatarMarketingVideo(): AvatarMarketingVideo {
+    public function avatarMarketingVideo(): AvatarMarketingVideo
+    {
         return new AvatarMarketingVideo($this->client);
     }
 
     /**
      * general querys
      */
-    public function generalQuery(): GeneralQuery {
+    public function generalQuery(): GeneralQuery
+    {
         return new GeneralQuery($this->client);
     }
 
     /**
      * product avatar
      */
-    public function productAvatar(): ProductAvatar {
+    public function productAvatar(): ProductAvatar
+    {
         return new ProductAvatar($this->client);
     }
 
     /**
      * scraper
      */
-    public function scraper(): Scraper {
+    public function scraper(): Scraper
+    {
         return new Scraper($this->client);
     }
 
     /**
      * upload
      */
-    public function upload(): Upload {
+    public function upload(): Upload
+    {
         return new Upload($this->client);
     }
 
     /**
      * video avatar
      */
-    public function videoAvatar() : VideoAvatar {
+    public function videoAvatar(): VideoAvatar
+    {
         return new videoAvatar($this->client);
     }
 }
