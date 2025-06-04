@@ -41,7 +41,7 @@ class AvatarMarketingVideo
      */
     public function export(string $taskId, ?int $scriptId = 0): JsonResponse
     {
-        $res = $this->client->request('post', 'v1/m2v/export', compact('taskId', 'scriptid'));
+        $res = $this->client->request('post', 'v1/m2v/export', compact('taskId', 'scriptId'));
 
         return $this->client->jsonStatusResponse($res);
     }

@@ -50,7 +50,8 @@ class BaseApiClient
         $mimeType = mime_content_type($filePath);
         $headers = ['Content-Type' => $mimeType];
 
-        return Http::withToken($this->authToken())->withHeaders($this->getHeaders($headers))->put($uploadUrl, file_get_contents($filePath));
+        // return Http::withToken($this->authToken())->withHeaders($this->getHeaders($headers))->put($uploadUrl, ['body' => file_get_contents($filePath)] );
+        return Http::withHeaders($this->getHeaders($headers))->send('put', $uploadUrl, ['body' => file_get_contents($filePath)] );
     }
 
     /**
