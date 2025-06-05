@@ -27,7 +27,7 @@ class VideoAvatar
      */
     public function queryTask(string $taskId, bool $needCloudFrontUrl = true): JsonResponse
     {
-        $res = $this->client->request('get', '1/video_avatar/task/query', compact('taskId', 'needCloudFrontUrl'));
+        $res = $this->client->request('get', 'v1/video_avatar/task/query', compact('taskId', 'needCloudFrontUrl'));
 
         return $this->client->jsonStatusResponse($res);
     }

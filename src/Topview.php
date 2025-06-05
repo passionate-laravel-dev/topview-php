@@ -16,10 +16,10 @@ class Topview
 
     public function __construct(
         string $topview_uid,
-        string $topwview_api_key,
+        string $topview_api_key,
         ?string $baseUrl = 'https://api.topview.ai'
     ) {
-        $this->client = new BaseApiClient($topview_uid, $topwview_api_key, $baseUrl);
+        $this->client = new BaseApiClient($topview_uid, $topview_api_key, $baseUrl);
     }
 
     /**
