@@ -23,6 +23,18 @@ class Upload
     }
 
     /**
+     * get upload check
+     *
+     * @see https://apifox.com/apidoc/shared/115a0d85-28a5-479d-8b8b-83d7898a7246/api-305508119
+     */
+    public function getUploadCheck(string $fileId): JsonResponse
+    {
+        $res = $this->client->request('get', 'v1/upload/check', ['fileId' => $fileId]);
+
+        return $this->client->jsonStatusResponse($res);
+    }
+
+    /**
      * file upload to s3
      *
      * @param  string  $filePath  //Local file path to upload

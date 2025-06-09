@@ -14,17 +14,17 @@ trait HasStatusResponse
      */
     public function jsonStatusResponse(Response $res): JsonResponse
     {
-        if ($res->successful()) {
+        if ($res->successful() && ($res->json('code') > 199 && $res->json('code') < 300)) {
             return FacadesResponse::json([
                 'status' => 'success',
-                'resData' => $res->json(),
+                'resData' => $res->json('result') ?? $res->json(),
             ]);
         }
 
         if ($res->unauthorized()) {
             return FacadesResponse::json([
                 'status' => 'error',
-                'message' => $res->json('error') ?? 'Unauthorized',
+                'message' => $res->json('message') ?? 'Unauthorized',
             ], 401);
         }
 
@@ -35,7 +35,7 @@ trait HasStatusResponse
 
         return FacadesResponse::json([
             'status' => 'error',
-            'message' => $res->json('error') ?? 'Unexpected error happen',
+            'message' => $res->json('message') ?? 'Unexpected error happen',
         ], $res->status());
     }
 }
